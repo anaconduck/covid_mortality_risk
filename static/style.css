@@ -83,10 +83,26 @@ body {
 
 .footer {
   text-align: center;
-  padding: 1.5rem;
-  background-color: white;
-  color: #6b7280;
-  font-size: 0.875rem;
+  padding: 2rem 1.5rem;
+  background-color: var(--card-bg);
+  color: #4b5563;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.02);
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-patent {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 /* Landing Page */
