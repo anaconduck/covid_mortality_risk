@@ -14,7 +14,7 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="{{ url_for('home') }}" class="nav-logo">🦠 COVID<span>Risk</span></a>
+            <a href="{{ url_for('home') }}" class="nav-logo">COVID<span>Risk</span></a>
             <div class="mobile-menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -37,18 +37,20 @@
         <div class="footer-container">
             <p>&copy; 2026 COVID-19 Mortality Risk Prediction System. All rights reserved.</p>
             <p class="footer-patent">
-                Metode, algoritma klasifikasi, dan sistem prediksi ini dilindungi secara hukum oleh Hak Kekayaan Intelektual (Paten). <br>
-                Dilarang keras memperbanyak, mendistribusikan, atau menggunakan sistem ini untuk tujuan komersial tanpa izin tertulis.
+                Metode, algoritma klasifikasi, dan sistem prediksi ini dilindungi secara hukum oleh Hak Kekayaan
+                Intelektual (Paten). <br>
+                Dilarang keras memperbanyak, mendistribusikan, atau menggunakan sistem ini untuk tujuan komersial tanpa
+                izin tertulis.
             </p>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileMenu = document.getElementById('mobile-menu');
             const navLinks = document.getElementById('nav-links');
             if (mobileMenu && navLinks) {
-                mobileMenu.addEventListener('click', function() {
+                mobileMenu.addEventListener('click', function () {
                     navLinks.classList.toggle('active');
                     mobileMenu.classList.toggle('is-active');
                 });
