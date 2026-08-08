@@ -180,26 +180,22 @@ body {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.floating-card {
-  background: white;
-  padding: 2.5rem;
+.hero-virus-img {
+  width: 100%;
+  max-width: 450px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  text-align: center;
+  box-shadow: 0 20px 40px rgba(15, 76, 117, 0.15);
   animation: float 6s ease-in-out infinite;
+  object-fit: cover;
 }
 
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
   100% { transform: translateY(0px); }
-}
-
-.fc-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
 }
 
 /* About Page */
