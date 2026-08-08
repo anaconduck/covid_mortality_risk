@@ -22,7 +22,8 @@ Thumbs.db
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Optionals: Jika file dataset/model terlalu besar (> 100MB), uncomment baris di bawah ini untuk mengabaikannya
-# dataset/
-# *.pkl
-# *.save
+# Deployments (Dihapus dari GitHub agar proses deploy ke Railway/Koyeb lebih ringan dan aman)
+dataset/
+notebooks/
+
+# Catatan: File model (*.pkl dan *.save) TETAP di-upload karena dibutuhkan saat aplikasi dijalankan di server.
