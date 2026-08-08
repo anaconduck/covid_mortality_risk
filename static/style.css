@@ -35,9 +35,9 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,9 +75,9 @@ body {
 .main-content {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 3rem 5%;
   background-image: linear-gradient(135deg, #f4f7f6 0%, #e0e8f0 100%);
 }
 
@@ -93,7 +93,8 @@ body {
 }
 
 .footer-container {
-  max-width: 800px;
+  width: 100%;
+  padding: 0 5%;
   margin: 0 auto;
 }
 
@@ -110,7 +111,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  max-width: 1000px;
+  width: 100%;
   align-items: center;
 }
 
@@ -216,7 +217,6 @@ body {
 
 /* About Page */
 .about-container {
-  max-width: 800px;
   width: 100%;
 }
 
@@ -254,7 +254,6 @@ body {
   box-shadow: 0 20px 40px rgba(15, 76, 117, 0.06);
   overflow: hidden;
   width: 100%;
-  max-width: 800px;
 }
 
 .card-header {
