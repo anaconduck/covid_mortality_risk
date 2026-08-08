@@ -430,3 +430,79 @@ select.input-field {
 .back-link:hover {
   background-color: #e5e7eb;
 }
+
+/* Mobile Responsiveness & Hamburger Menu */
+.mobile-menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+.mobile-menu-toggle .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+}
+
+.mobile-menu-toggle.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.mobile-menu-toggle.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem;
+    position: relative;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    background-color: var(--card-bg);
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
+  .nav-links.active {
+    left: 0;
+  }
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid #f3f4f6;
+  }
+  .nav-links a {
+    display: block;
+    padding: 1.5rem 0;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-virus-img {
+    max-width: 300px;
+  }
+  .card-form {
+    padding: 1.5rem;
+  }
+  .card-heading {
+    font-size: 1.5rem;
+  }
+  .result-title {
+    font-size: 1.75rem;
+  }
+  .main-content {
+    padding: 2rem 1rem;
+  }
+}

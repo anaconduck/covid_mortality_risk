@@ -14,8 +14,13 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="{{ url_for('home') }}" class="nav-logo">COVID<span>Risk</span></a>
-            <ul class="nav-links">
+            <a href="{{ url_for('home') }}" class="nav-logo">🦠 COVID<span>Risk</span></a>
+            <div class="mobile-menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('form') }}">Prediksi</a></li>
                 <li><a href="{{ url_for('about') }}">Tentang</a></li>
@@ -38,6 +43,18 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            if (mobileMenu && navLinks) {
+                mobileMenu.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    mobileMenu.classList.toggle('is-active');
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
