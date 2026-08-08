@@ -489,8 +489,15 @@ select.input-field {
   .hero-title {
     font-size: 2.2rem;
   }
-  .hero-virus-img {
-    max-width: 300px;
+  .hero-actions {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .hero-actions a {
+    width: 100%;
+  }
+  .hero-image {
+    display: none;
   }
   .card-form {
     padding: 1.5rem;
