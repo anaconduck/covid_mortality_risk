@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../static/nicepage.css" media="screen">
-    <link rel="stylesheet" href="../static/results.css" media="screen">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../static/images/foto.ico">
-    <title>Mortality Risk Prediction</title>
+    <title>Hasil Prediksi - Mortality Risk</title>
+    <!-- We can reuse style.css to keep design consistent -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
-<body class="u-body">
-    <section class="u-clearfix u-section-1" id="sec-2afe">
-        <div class="u-clearfix u-sheet u-sheet-1">
+<body>
+    <div class="container">
+        <div class="card result-card">
+            
             {% if pred == 1 %}
-            <img class="u-align-center u-image u-image-default u-image-1" src="../static/images/virus.jpg" alt=""
-                data-image-width="1280" data-image-height="853">
-            <blink><h3 class="u-align-center u-text u-text-1"> ICU </h3></blink>
-            <a href="https://covid19-deployment-production.up.railway.app/">back</a>
+            <!-- High Risk Icon -->
+            <div class="result-icon danger">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+            </div>
+            <h3 class="result-title danger">RISIKO TINGGI (ICU)</h3>
+            <p class="result-desc">Berdasarkan hasil analisis klinis, pasien memiliki tingkat risiko keparahan yang tinggi dan berpotensi membutuhkan perawatan intensif (ICU).</p>
+            
             {% elif pred == 0 %}
-            <img class="u-align-center u-image u-image-default u-image-1" src="../static/images/sun.jpg" alt=""
-                data-image-width="1280" data-image-height="853">
-            <blink1><h3 class="u-align-center u-text u-text-1"> SEHAT </h3></blink1>
-            <a href="https://covid19-deployment-production.up.railway.app/">back</a>
+            <!-- Safe / Low Risk Icon -->
+            <div class="result-icon safe">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <h3 class="result-title safe">RISIKO RENDAH (SEHAT)</h3>
+            <p class="result-desc">Berdasarkan hasil analisis klinis, pasien memiliki risiko komplikasi yang sangat rendah dan diprediksi dalam kondisi aman.</p>
+            
             {% endif %}
-        </div>
-    </section>
-    <style class="u-overlap-style">
-        .u-overlap:not(.u-sticky-scroll) .u-header {}
-    </style>
-</body>
 
+            <a href="{{ url_for('home') }}" class="back-link">← Kembali ke Form Prediksi</a>
+        </div>
+    </div>
+</body>
 </html>
