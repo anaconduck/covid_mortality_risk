@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,12 @@
     <link rel="icon" href="{{ url_for('static', filename='images/foto.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    
+
     <nav class="navbar">
         <div class="nav-container">
-            <a href="{{ url_for('home') }}" class="nav-logo">🦠 COVID<span>Risk</span></a>
+            <a href="{{ url_for('home') }}" class="nav-logo">COVID<span>Risk</span></a>
             <ul class="nav-links">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('form') }}">Prediksi</a></li>
@@ -31,4 +33,5 @@
     </footer>
 
 </body>
+
 </html>
