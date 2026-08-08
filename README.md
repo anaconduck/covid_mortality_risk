@@ -9,7 +9,7 @@ Ini adalah aplikasi web berbasis Flask yang digunakan untuk memprediksi tingkat 
 **2. Formulir Prediksi Medis**  
 <img src="static/images/page2.png" alt="Formulir Prediksi" width="800">
 
-**3. Hasil Keputusan Sistem**  
+**3. Tentang Sistem**  
 <img src="static/images/page3.png" alt="Hasil Analisis" width="800">
 
 ## ⚖️ Hak Kekayaan Intelektual
