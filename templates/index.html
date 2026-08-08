@@ -1,106 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COVID-19 Mortality Risk Prediction</title>
-    <!-- Use url_for for static files in Flask -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h2 class="card-heading">COVID-19 Risk Assessor</h2>
-                <p class="card-subheading">Clinical Mortality Prediction Model</p>
-            </div>
-            
-            <form class="card-form" action="{{ url_for('predict')}}" method="POST">
-                <div class="form-grid">
-                    <div class="input-group">
-                        <label class="input-label">Usia (Tahun)</label>
-                        <input name="Usia" type="number" step="any" class="input-field" required placeholder="Contoh: 45"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">BMI</label>
-                        <input name="BMI" type="number" step="any" class="input-field" required placeholder="Contoh: 24.5"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">Keparahan Infeksi (1 - 4)</label>
-                        <input name="Keparahan Infeksi " type="number" step="any" class="input-field" required min="1" max="4" placeholder="Skala 1 - 4"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">Leukosit (/mm3)</label>
-                        <input name="Leukosit" type="number" step="any" class="input-field" required placeholder="Contoh: 6000"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">NLR</label>
-                        <input name="NLR" type="number" step="any" class="input-field" required placeholder="Contoh: 3.2"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">PT (detik)</label>
-                        <input name="PT" type="number" step="any" class="input-field" required placeholder="Contoh: 12.5"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">Fibrinogen (mg/dl)</label>
-                        <input name="Fibrinogen" type="number" step="any" class="input-field" required placeholder="Contoh: 300"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">D-Dimer (mg/L FEU)</label>
-                        <input name="D-dimer" type="number" step="any" class="input-field" required placeholder="Contoh: 0.5"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">SGOT (U/L)</label>
-                        <input name="SGOT" type="number" step="any" class="input-field" required placeholder="Contoh: 25"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">LDH (U/L)</label>
-                        <input name="LDH" type="number" step="any" class="input-field" required placeholder="Contoh: 150"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">CRP (mg/dL)</label>
-                        <input name="CRP" type="number" step="any" class="input-field" required placeholder="Contoh: 5.0"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">Procalcitonin (ng/mL)</label>
-                        <input name="Procalcitonin" type="number" step="any" class="input-field" required placeholder="Contoh: 0.05"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">MCP-1 (ng/mL)</label>
-                        <input name="MCP-1" type="number" step="any" class="input-field" required placeholder="Contoh: 100"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">IL1B (pg/L)</label>
-                        <input name="IL1B" type="number" step="any" class="input-field" required placeholder="Contoh: 5"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">TNF α (ng/mL)</label>
-                        <input name="TNF α" type="number" step="any" class="input-field" required placeholder="Contoh: 12"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">IP-10 (pg/L)</label>
-                        <input name="IP-10" type="number" step="any" class="input-field" required placeholder="Contoh: 50"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">IL-4 (ng/mL)</label>
-                        <input name="IL-4" type="number" step="any" class="input-field" required placeholder="Contoh: 2"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">IL-6 (pg/L)</label>
-                        <input name="IL-6" type="number" step="any" class="input-field" required placeholder="Contoh: 10"/>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">Diabetes Mellitus (DM)</label>
-                        <input name="DM" type="number" step="any" class="input-field" required min="0" max="1" placeholder="0 = Tidak, 1 = Ya"/>
-                    </div>
-                </div>
+{% extends "base.html" %}
 
-                <div class="action">
-                    <button type="submit" class="action-button">Analisis Prediksi</button>
-                </div>
-            </form>
-        </div>
+{% block title %}Form Prediksi - COVID-19 Risk Assessor{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-heading">COVID-19 Risk Assessor</h2>
+        <p class="card-subheading">Clinical Mortality Prediction Model</p>
     </div>
-</body>
-</html>
+    
+    <form class="card-form" action="{{ url_for('predict')}}" method="POST">
+        <div class="form-grid">
+            <div class="input-group">
+                <label class="input-label">Usia (Tahun)</label>
+                <input name="Usia" type="number" step="any" class="input-field" required placeholder="Contoh: 45"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">BMI</label>
+                <input name="BMI" type="number" step="any" class="input-field" required placeholder="Contoh: 24.5"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">Keparahan Infeksi (1 - 4)</label>
+                <input name="Keparahan Infeksi " type="number" step="any" class="input-field" required min="1" max="4" placeholder="Skala 1 - 4"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">Leukosit (/mm3)</label>
+                <input name="Leukosit" type="number" step="any" class="input-field" required placeholder="Contoh: 6000"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">NLR</label>
+                <input name="NLR" type="number" step="any" class="input-field" required placeholder="Contoh: 3.2"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">PT (detik)</label>
+                <input name="PT" type="number" step="any" class="input-field" required placeholder="Contoh: 12.5"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">Fibrinogen (mg/dl)</label>
+                <input name="Fibrinogen" type="number" step="any" class="input-field" required placeholder="Contoh: 300"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">D-Dimer (mg/L FEU)</label>
+                <input name="D-dimer" type="number" step="any" class="input-field" required placeholder="Contoh: 0.5"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">SGOT (U/L)</label>
+                <input name="SGOT" type="number" step="any" class="input-field" required placeholder="Contoh: 25"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">LDH (U/L)</label>
+                <input name="LDH" type="number" step="any" class="input-field" required placeholder="Contoh: 150"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">CRP (mg/dL)</label>
+                <input name="CRP" type="number" step="any" class="input-field" required placeholder="Contoh: 5.0"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">Procalcitonin (ng/mL)</label>
+                <input name="Procalcitonin" type="number" step="any" class="input-field" required placeholder="Contoh: 0.05"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">MCP-1 (ng/mL)</label>
+                <input name="MCP-1" type="number" step="any" class="input-field" required placeholder="Contoh: 100"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">IL1B (pg/L)</label>
+                <input name="IL1B" type="number" step="any" class="input-field" required placeholder="Contoh: 5"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">TNF α (ng/mL)</label>
+                <input name="TNF α" type="number" step="any" class="input-field" required placeholder="Contoh: 12"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">IP-10 (pg/L)</label>
+                <input name="IP-10" type="number" step="any" class="input-field" required placeholder="Contoh: 50"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">IL-4 (ng/mL)</label>
+                <input name="IL-4" type="number" step="any" class="input-field" required placeholder="Contoh: 2"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">IL-6 (pg/L)</label>
+                <input name="IL-6" type="number" step="any" class="input-field" required placeholder="Contoh: 10"/>
+            </div>
+            <div class="input-group">
+                <label class="input-label">Diabetes Mellitus (DM)</label>
+                <input name="DM" type="number" step="any" class="input-field" required min="0" max="1" placeholder="0 = Tidak, 1 = Ya"/>
+            </div>
+        </div>
+
+        <div class="action">
+            <button type="submit" class="action-button">Analisis Prediksi</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

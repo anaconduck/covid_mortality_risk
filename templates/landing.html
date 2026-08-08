@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Home - COVID-19 Risk Assessor{% endblock %}
+
+{% block content %}
+<div class="landing-container">
+    <div class="hero-section">
+        <h1 class="hero-title">Prediksi Risiko Klinis <br><span>COVID-19</span></h1>
+        <p class="hero-subtitle">Sistem Machine Learning untuk membantu tenaga medis menilai tingkat keparahan dan mortalitas pasien COVID-19 berdasarkan parameter klinis secara real-time.</p>
+        
+        <div class="hero-actions">
+            <a href="{{ url_for('form') }}" class="btn-primary">Mulai Analisis Pasien</a>
+            <a href="{{ url_for('about') }}" class="btn-secondary">Pelajari Sistem</a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <!-- Modern abstract medical shape or simple floating card -->
+        <div class="floating-card">
+            <div class="fc-icon">🏥</div>
+            <h3>Akurasi Tinggi</h3>
+            <p>Berbasis Data Klinis Tervalidasi</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

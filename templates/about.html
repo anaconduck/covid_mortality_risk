@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Tentang - COVID-19 Risk Assessor{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <div class="card about-card">
+        <div class="card-header">
+            <h2 class="card-heading">Tentang Aplikasi</h2>
+            <p class="card-subheading">Informasi Model & Sistem</p>
+        </div>
+        <div class="about-content">
+            <h3>Latar Belakang</h3>
+            <p>Aplikasi ini dikembangkan untuk memberikan indikator awal tingkat risiko fatalitas pasien COVID-19. Dengan memasukkan 18 parameter klinis laboratorium pasien (seperti Usia, BMI, Leukosit, D-dimer, dll), sistem dapat mengkalkulasi probabilitas pasien masuk ke dalam kategori risiko tinggi (ICU) atau risiko rendah (Aman).</p>
+            
+            <h3>Teknologi</h3>
+            <p>Backend aplikasi dibangun menggunakan <strong>Python & Flask</strong>. Mesin prediksi ditenagai oleh <strong>Scikit-Learn</strong> yang menggunakan model algoritma klasifikasi terbaik hasil eksperimen ekstensif pada dataset klinis riwayat pasien COVID-19.</p>
+
+            <h3>Penafian Medis (Disclaimer)</h3>
+            <p class="disclaimer-text">Aplikasi ini berstatus sebagai <em>Decision Support System</em>. Keputusan medis tetap harus dibuat oleh dokter profesional berdasarkan diagnosis mendalam. Prediksi dari sistem tidak dapat menggantikan vonis medis resmi.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
