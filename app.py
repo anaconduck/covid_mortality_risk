@@ -1,7 +1,7 @@
 from flask import Flask,request,render_template,url_for
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-import joblib as joblib
+import joblib
 
 
 app = Flask(__name__)
@@ -14,14 +14,24 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    float_features = [float(x) for x in request.form.values()]
-    features = [np.array(float_features)]
+    try:
+        # Mengambil data dan mengubahnya menjadi float
+        float_features = [float(x) for x in request.form.values()]
+        features = [np.array(float_features)]
+        
+        # Standarisasi data
+        normal = scaler.transform(features)
+        
+        # Melakukan prediksi
+        prediction = model.predict(normal)
+        
+        return render_template('results.html', pred=prediction[0])
     
-    normal = scaler.transform(features)
-    
-    prediction = model.predict(normal)
-    
-    return render_template('results.html',pred=prediction)
+    except Exception as e:
+        # Jika terjadi error (misal form kosong atau format salah), kembalikan ke halaman awal dengan pesan error (jika diimplementasi di frontend) atau sekadar render ulang.
+        # Untuk kesederhanaan, kita bisa mengarahkan kembali ke home atau mencetak error.
+        print(f"Error during prediction: {e}")
+        return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
