@@ -7,41 +7,19 @@ Ini adalah aplikasi web berbasis Flask yang digunakan untuk memprediksi tingkat 
 - `requirements.txt`: Daftar library Python yang dibutuhkan.
 - `covid_model.pkl`: Model machine learning yang telah dilatih.
 - `scaler.save`: Skalar (StandardScaler) untuk normalisasi data.
-- `templates/`: Folder berisi file HTML (`index.html`, `results.html`).
+- `templates/`: Folder berisi file HTML untuk antarmuka pengguna.
 - `static/`: Folder untuk aset statis (CSS, JS, Images).
-- `notebooks/`: Folder berisi Jupyter Notebook untuk eksperimen / training model.
-- `dataset/`: Folder berisi dataset yang digunakan untuk melatih model.
 
-## 🚀 Cara Menjalankan Aplikasi Lokal
+## 📸 Tampilan Aplikasi
 
-1. **Clone repository ini** (jika sudah di-push ke GitHub):
-   ```bash
-   git clone <url-repo-anda>
-   cd COVID_Mortality
-   ```
+**1. Halaman Utama (Landing Page)**  
+<img src="static/images/page1 (1).png" alt="Halaman Utama" width="800">
 
-2. **Buat dan aktifkan Virtual Environment** (disarankan):
-   - Di Windows:
-     ```bash
-     python -m venv venv
-     venv\Scripts\activate
-     ```
-   - Di Mac/Linux:
-     ```bash
-     python3 -m venv venv
-     source venv/bin/activate
-     ```
+**2. Formulir Prediksi Medis**  
+<img src="static/images/page2.png" alt="Formulir Prediksi" width="800">
 
-3. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Jalankan Aplikasi Flask**:
-   ```bash
-   python app.py
-   ```
-   Aplikasi akan berjalan di `http://127.0.0.1:5000/`.
+**3. Hasil Keputusan Sistem**  
+<img src="static/images/page3.png" alt="Hasil Analisis" width="800">
 
 ## 🛠️ Teknologi yang Digunakan
 - **Python** (Backend)
