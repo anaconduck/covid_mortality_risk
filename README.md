@@ -21,9 +21,7 @@ Ini adalah aplikasi web berbasis Flask yang digunakan untuk memprediksi tingkat 
 **3. Hasil Keputusan Sistem**  
 <img src="static/images/page3.png" alt="Hasil Analisis" width="800">
 
-## 🛠️ Teknologi yang Digunakan
-- **Python** (Backend)
-- **Flask** (Web Framework)
-- **Scikit-Learn** (Machine Learning)
-- **HTML/CSS** (Frontend)
-- **Gunicorn** (WSGI Server untuk deployment)
+## ⚖️ Hak Kekayaan Intelektual
+Aplikasi dan algoritma ini telah terdaftar dan dilindungi secara hukum.
+- **Nomor Permohonan**: EC00202351268
+- **Tanggal Permohonan**: 4 Juli 2023
