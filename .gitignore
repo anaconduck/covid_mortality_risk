@@ -1,0 +1,28 @@
+# Environments
+venv/
+env/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDE / OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Dependencies
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Optionals: Jika file dataset/model terlalu besar (> 100MB), uncomment baris di bawah ini untuk mengabaikannya
+# dataset/
+# *.pkl
+# *.save
